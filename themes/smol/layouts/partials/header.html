@@ -1,0 +1,17 @@
+<header>
+	<div>
+		{{ strings.Repeat ( .Site.Title | len | add 4 ) " = " }}
+		<a href="{{ .Site.BaseURL }}"> {{ .Site.Title }} </a>
+		{{ strings.Repeat ( .Site.Title | len | add 4 ) " = " }}
+	</div>
+	<div style="float: right;">{{ .Site.Params.subtitle }}</div><br>
+	<p>
+	<nav>
+			{{ with .Site.Menus.main }}
+			{{ range . }}
+			<a href="{{ .URL | relURL }}"><b>{{ .Name }}</b></a>.
+			{{ end }}
+	</nav>
+	</p>
+	{{ end }}
+</header>
